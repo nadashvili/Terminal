@@ -43,8 +43,9 @@
 
         /* მთავარი ინტერფეისი */
         #chat-interface { display: none; width: 100%; height: 100vh; flex-direction: column; }
-        header { height: 60px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 15px; background: #050505; }
-        #messages { flex: 1; overflow-y: auto; padding: 15px; display: flex; flex-direction: column; gap: 12px; }
+        header { height: 60px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 15px; background: #050505;
+        z-index: 1000000;}
+        #messages { flex: 2; overflow-y: auto; padding: 15px; display: flex; flex-direction: column ; gap: 12px;margin-top: -10px; }
         
         /* მესიჯების სტილი */
         .msg-row { max-width: 90%; }
@@ -76,15 +77,12 @@
     </div>
 
     <div id="chat-interface">
-        <div class="status-bar">
-            <span>სტატუსი: ონლაინ</span>
-            <span>პინგი: <span id="ping">--</span>მს</span>
-        </div>
+
         <header>
             <div id="user-display" style="font-size: 11px; color: var(--accent);">კვანძი://უცნობი</div>
             <button onclick="location.reload()" style="background:none; border:1px solid var(--border); color:var(--error); padding:5px 10px; cursor:pointer; font-family:var(--font-main); font-size:9px;">გამოსვლა</button>
         </header>
-        <div id="messages"></div>
+        <div id="messages"></div><br><br><br><br><br><br><br><br><br><br><br><br>
         <form id="chat-form" class="input-wrap">
             <div class="input-container">
                 <input type="text" id="message-input" placeholder="დაწერეთ შეტყობინება..." autocomplete="off">
